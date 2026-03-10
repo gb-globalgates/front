@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구독 변경 - Premium</title>
+    <link rel="stylesheet" href="/static/css/Subscribe/Subscribe.css">
+</head>
+<body style="background-color: rgb(0, 0, 0);">
+<div id="subscribe-app" class="subscribe-stack subscribe-u-bg-rgb-0-0-0 subscribe-u-min-h-100dvh subscribe-u-overflow-auto subscribe-u-w-full">
+
+    <!-- Space background -->
+    <div class="subscribe-stack subscribe-u-absolute subscribe-u-left-0 subscribe-u-right-0 subscribe-u-top-0 subscribe-u-h-500 subscribe-u-z-0 subscribe-u-overflow-hidden">
+        <div class="subscribe-stack subscribe-u-bg-transparent subscribe-u-bg-center subscribe-u-bg-no-repeat subscribe-u-bottom-0 subscribe-u-h-full subscribe-u-left-0 subscribe-u-absolute subscribe-u-right-0 subscribe-u-top-0 subscribe-u-w-full subscribe-u-z-1 subscribe-u-bg-cover"
+             style="background-image: url('https://abs.twimg.com/responsive-web/client-web/premium-space-background.c0c7306a.png');">
+        </div>
+    </div>
+
+    <!-- Close button -->
+    <button data-testid="app-bar-close" aria-label="닫기" type="button"
+            class="subscribe-stack subscribe-u-rounded-full subscribe-u-border-solid subscribe-u-border-1 subscribe-u-select-none subscribe-u-left-14 subscribe-u-absolute subscribe-u-top-14 subscribe-u-z-1-2 subscribe-u-min-h-32 subscribe-u-min-w-32 subscribe-u-cursor-pointer subscribe-u-duration-0-200 subscribe-u-transition-surface subscribe-u-outline-none subscribe-u-flex subscribe-u-items-center subscribe-u-justify-center"
+            style="background-color: rgba(15, 20, 25, 0.75); border-color: transparent; backdrop-filter: blur(4px);">
+        <svg viewBox="0 0 24 24" aria-hidden="true"
+             class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom subscribe-u-h-18 subscribe-u-w-18"
+             style="color: rgb(255, 255, 255);">
+            <g><path d="M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z"></path></g>
+        </svg>
+    </button>
+
+    <!-- Main content -->
+    <div class="subscribe-stack subscribe-u-items-center subscribe-u-mx-auto subscribe-u-max-w-1280 subscribe-u-px-14 subscribe-u-text-center subscribe-u-top-20 subscribe-u-w-full subscribe-u-z-1-2">
+
+        <!-- Badge image -->
+        <div class="subscribe-stack subscribe-u-basis-auto subscribe-u-overflow-hidden subscribe-u-z-0 subscribe-u-h-120 subscribe-u-w-120">
+            <div class="subscribe-stack subscribe-u-bg-transparent subscribe-u-bg-center subscribe-u-bg-no-repeat subscribe-u-bottom-0 subscribe-u-h-full subscribe-u-left-0 subscribe-u-absolute subscribe-u-right-0 subscribe-u-top-0 subscribe-u-w-full subscribe-u-z-1 subscribe-u-bg-contain"
+                 style="background-image: url('https://abs.twimg.com/responsive-web/client-web/premium-badge.8d5b82aa.png');"></div>
+        </div>
+
+        <!-- Title -->
+        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-font-medium subscribe-u-text-divider-soft subscribe-u-text-36 subscribe-u-leading-50-4 subscribe-u-mb-14">
+            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">구독 변경</span>
+        </div>
+    </div>
+
+    <!-- Toggle + Cards area -->
+    <div class="subscribe-stack" style="align-items: center; flex: 1 1 0%; width: 100%; max-width: 1280px; margin: 22px auto 0; padding: 0 14px;">
+        <div class="subscribe-stack" style="max-width: 1440px;">
+            <div class="subscribe-stack" style="width: 100%; flex: 1 1 0%;">
+
+                <!-- Toggle: 연간 / 매월 -->
+                <div class="subscribe-stack subscribe-u-flex subscribe-u-flex-row subscribe-u-justify-center">
+                    <div class="subscribe-stack subscribe-u-bg-ink subscribe-u-rounded-full subscribe-u-flex subscribe-u-flex-row subscribe-u-gap-4 subscribe-u-p-4">
+                        <div aria-checked="true" role="radio" tabindex="0" data-testid="interval_radio_yearly"
+                             class="subscribe-stack subscribe-u-items-center subscribe-u-rounded-full subscribe-u-cursor-pointer subscribe-u-flex subscribe-u-justify-center subscribe-u-p-4 subscribe-u-transition-background-color-0-2s subscribe-u-w-160 subscribe-u-bg-rgb-32-35-39 subscribe-u-border-t-divider-dark subscribe-u-border-t-1">
+                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular" style="color: rgb(255, 255, 255);">
+                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">연간</span>
+                            </div>
+                        </div>
+                        <div aria-checked="false" role="radio" tabindex="0" data-testid="interval_radio_monthly"
+                             class="subscribe-stack subscribe-u-items-center subscribe-u-bg-ink subscribe-u-rounded-full subscribe-u-cursor-pointer subscribe-u-flex subscribe-u-justify-center subscribe-u-p-4 subscribe-u-transition-background-color-0-2s subscribe-u-w-160">
+                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular" style="color: rgb(113, 118, 123);">
+                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">매월</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing cards container -->
+                <div class="subscribe-stack" style="position: relative; width: 100%;">
+                    <div class="subscribe-stack subscribe-u-min-h-135 subscribe-u-flex-row subscribe-u-gap-14 subscribe-u-justify-center subscribe-u-mt-14 subscribe-u-w-full">
+
+                        <!-- ========== Card 1: 베이직 ========== -->
+                        <div data-testid="product-card-PremiumBasic"
+                             class="subscribe-stack subscribe-plan-card subscribe-u-rounded-16 subscribe-u-grow subscribe-u-max-w-360 subscribe-u-w-360 subscribe-u-bg-rgb-22-24-28 subscribe-u-overflow-hidden subscribe-u-relative subscribe-u-border-transparent subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-border-2 subscribe-u-center-transform-2 subscribe-u-transition-transform-0-3s-ease-in-out">
+                            <!-- Glow blob -->
+                            <div class="subscribe-stack subscribe-u-bg-rgb-42-45-48 subscribe-u-filter-blur-100px subscribe-u-h-full subscribe-u-left--150 subscribe-u-absolute subscribe-u-top-80 subscribe-u-center-transform-3 subscribe-u-w-395-18"></div>
+
+                            <div class="subscribe-stack subscribe-u-grow subscribe-u-p-18 subscribe-u-pt-18">
+                                <!-- Plan name -->
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex-row subscribe-u-gap-7 subscribe-u-justify-start">
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-18 subscribe-u-leading-22 subscribe-u-font-medium" style="color: rgb(255, 255, 255);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">베이직</span>
+                                    </div>
+                                </div>
+                                <!-- Price -->
+                                <div class="subscribe-stack subscribe-u-items-baseline subscribe-u-flex-row subscribe-u-flex-wrap subscribe-u-mt-14">
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-font-medium subscribe-u-text-28-8 subscribe-u-leading-28-8" style="color: rgb(255, 255, 255);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">₩2,900</span>
+                                    </div>
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-ml-4" style="color: rgb(182, 185, 188);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">/ 월</span>
+                                    </div>
+                                </div>
+                                <!-- Billing info -->
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex-row subscribe-u-mt-7">
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular" style="color: rgb(231, 233, 234);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">연간 청구</span>
+                                    </div>
+                                    <div class="subscribe-stack subscribe-u-self-center subscribe-u-bg-surface-dark subscribe-u-rounded-4 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-ml-7 subscribe-u-py-2 subscribe-u-px-4">
+                                        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-10 subscribe-u-leading-11 subscribe-u-font-regular" style="color: rgb(255, 255, 255);">
+                                            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">13% 절약</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- CTA button -->
+                                <div class="subscribe-stack subscribe-u-shadow-none subscribe-u-mt-7 subscribe-u-pb-0 subscribe-u-sticky">
+                                    <div class="subscribe-stack subscribe-u-shadow-none subscribe-u-mt-7 subscribe-u-pb-0 subscribe-u-sticky">
+                                        <button role="button" data-testid="tierSwitchButton" type="button"
+                                                class="subscribe-stack subscribe-u-rounded-full subscribe-u-border-solid subscribe-u-border-1 subscribe-u-select-none subscribe-u-border-white-strong subscribe-u-min-h-40 subscribe-u-min-w-40 subscribe-u-px-22 subscribe-u-cursor-pointer subscribe-u-duration-0-200 subscribe-u-transition-surface subscribe-u-outline-none"
+                                                style="border-color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-center subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-bold subscribe-u-items-center subscribe-u-flex subscribe-u-flex-row subscribe-u-grow subscribe-u-min-w-0 subscribe-u-justify-center" style="color: rgb(0, 0, 0);">
+                                                <div class="subscribe-stack subscribe-u-inline-flex">
+                                                    <span class="subscribe-copy-inline subscribe-u-max-w-full subscribe-u-overflow-hidden subscribe-u-text-ellipsis subscribe-u-whitespace-nowrap subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit subscribe-u-text-14 subscribe-u-leading-18">다운그레이드</span>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Features -->
+                            <div class="subscribe-stack subscribe-u-grow subscribe-u-gap-4 subscribe-u-mt-14 subscribe-u-p-18 subscribe-u-pt-18">
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M11.998 1.75C6.337 1.75 1.748 6.34 1.748 12s4.589 10.25 10.25 10.25 10.25-4.59 10.25-10.25-4.589-10.25-10.25-10.25zM15.996 15h-2v-3.59l-5.293 5.3-1.414-1.42L12.581 10H8.996V8h7v7z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">답글이 적은 게시물 부스트</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M2.998 8.5c0-1.38 1.119-2.5 2.5-2.5h9c1.381 0 2.5 1.12 2.5 2.5v14.12l-7-3.5-7 3.5V8.5zM18.5 2H8.998c-1.105 0-2 .9-2 2H18.5c.276 0 .5.22.5.5v9.82l-.002-.01v2.28L21 17.68V4.5C21 3.12 19.881 2 18.5 2z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">북마크 폴더</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 10 10" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M4.43 1.256c.179-.553.961-.553 1.14 0l.642 1.975c.08.248.311.415.571.415H8.86c.581 0 .823.744.352 1.085l-1.68 1.221c-.21.153-.298.424-.218.67l.642 1.976c.18.553-.453 1.012-.923.67l-1.68-1.22c-.21-.153-.495-.153-.706 0l-1.68 1.22c-.47.342-1.103-.117-.923-.67l.642-1.975c.08-.247-.008-.518-.218-.671l-1.68-1.22c-.47-.342-.229-1.086.352-1.086h2.077c.26 0 .49-.167.57-.415l.642-1.975z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">하이라이트 탭</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M22 19v2h-7.5l2-2H22zM3.35 14.232c-.97.977-.97 2.559 0 3.536L6.59 21h5.32l9.78-9.774c.95-.949.98-2.477.07-3.463l-3.97-4.294c-.96-1.043-2.6-1.076-3.6-.072L3.35 14.232zm16.94-5.113c.18.197.17.503-.02.693l-5.52 5.524L9.91 10.5l5.69-5.689c.2-.201.53-.194.72.014l3.97 4.294zM11.09 19H7.41l-2.64-2.646c-.2-.196-.2-.512 0-.708l3.73-3.732 4.84 4.836L11.09 19zM1.29 7.707l2 2 1.42-1.414-2-2-1.42 1.414zM3 11H0v2h3v-2z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">게시물 수정 기능</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M3 5.5C3 4.119 4.12 3 5.5 3h13C19.88 3 21 4.119 21 5.5v13c0 1.381-1.12 2.5-2.5 2.5h-13C4.12 21 3 19.881 3 18.5v-13zM5.5 5c-.276 0-.5.224-.5.5v13c0 .276.224.5.5.5h13c.276 0 .5-.224.5-.5v-13c0-.276-.224-.5-.5-.5h-13zM7 8h10v2H7V8zm0 4h7v2H7v-2z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">긴 게시물 작성</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M12 3.786c-4.556 0-8.25 3.694-8.25 8.25s3.694 8.25 8.25 8.25c1.595 0 3.081-.452 4.339-1.236l.293-.19-.387-.042c-.243-.025-.49-.06-.742-.107l-.195-.038-.161.098c-.99.597-2.13.925-3.315.925h-.002C7.6 19.71 4.577 16.684 4.573 12.036c0-4.093 3.331-7.42 7.427-7.42 4.093 0 7.424 3.327 7.424 7.42 0 .422-.142 1.213-.247 1.592l-.08.29.191-.146c.324-.247.638-.525.938-.83l.085-.086.025-.115c.085-.393.143-.87.164-1.343l.007-.156C20.506 7.334 16.64 3.586 12 3.786zm-3.593 7.81c0-.78.641-1.414 1.43-1.414.792 0 1.434.633 1.434 1.414 0 .78-.642 1.413-1.434 1.413-.789 0-1.43-.633-1.43-1.413zm5.726 0c0-.78.642-1.414 1.434-1.414.79 0 1.43.633 1.43 1.414 0 .78-.64 1.413-1.43 1.413-.792 0-1.434-.633-1.434-1.413zM8.63 14.5h6.74c-.483 1.473-1.712 2.554-3.37 2.554-1.658 0-2.887-1.08-3.37-2.554z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">환경 맞춤 설정하기</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ========== Card 2: Premium ========== -->
+                        <div data-testid="product-card-BlueVerified"
+                             class="subscribe-stack subscribe-plan-card subscribe-u-rounded-16 subscribe-u-grow subscribe-u-max-w-360 subscribe-u-w-360 subscribe-u-bg-rgb-22-24-28 subscribe-u-overflow-hidden subscribe-u-relative subscribe-u-border-transparent subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-border-2 subscribe-u-center-transform-2 subscribe-u-transition-transform-0-3s-ease-in-out">
+                            <div class="subscribe-stack subscribe-u-bg-rgb-42-45-48 subscribe-u-filter-blur-100px subscribe-u-h-full subscribe-u-left--150 subscribe-u-absolute subscribe-u-top-80 subscribe-u-center-transform-3 subscribe-u-w-395-18"></div>
+
+                            <div class="subscribe-stack subscribe-u-grow subscribe-u-p-18 subscribe-u-pt-18">
+                                <!-- Plan name -->
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex-row subscribe-u-gap-7 subscribe-u-justify-start">
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-18 subscribe-u-leading-22 subscribe-u-font-medium" style="color: rgb(255, 255, 255);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">Premium</span>
+                                    </div>
+                                </div>
+                                <!-- Price -->
+                                <div class="subscribe-stack subscribe-u-items-baseline subscribe-u-flex-row subscribe-u-flex-wrap subscribe-u-mt-14">
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-font-medium subscribe-u-text-28-8 subscribe-u-leading-28-8" style="color: rgb(255, 255, 255);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">₩7,500</span>
+                                    </div>
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-ml-4" style="color: rgb(182, 185, 188);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">/ 월</span>
+                                    </div>
+                                </div>
+                                <!-- Billing info -->
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex-row subscribe-u-mt-7">
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular" style="color: rgb(231, 233, 234);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">연간 청구</span>
+                                    </div>
+                                    <div class="subscribe-stack subscribe-u-self-center subscribe-u-bg-surface-dark subscribe-u-rounded-4 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-ml-7 subscribe-u-py-2 subscribe-u-px-4">
+                                        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-10 subscribe-u-leading-11 subscribe-u-font-regular" style="color: rgb(255, 255, 255);">
+                                            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">16% 절약</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- CTA button (disabled - current plan) -->
+                                <div class="subscribe-stack subscribe-u-shadow-none subscribe-u-mt-7 subscribe-u-pb-0 subscribe-u-sticky">
+                                    <div class="subscribe-stack subscribe-u-shadow-none subscribe-u-mt-7 subscribe-u-pb-0 subscribe-u-sticky">
+                                        <button role="button" data-testid="tierSwitchButton" type="button" aria-disabled="true" disabled="" tabindex="-1"
+                                                class="subscribe-stack subscribe-u-rounded-full subscribe-u-border-solid subscribe-u-border-1 subscribe-u-select-none subscribe-u-border-white-strong subscribe-u-min-h-40 subscribe-u-min-w-40 subscribe-u-px-22 subscribe-u-duration-0-200 subscribe-u-transition-surface subscribe-u-opacity-0-5 subscribe-u-outline-none"
+                                                style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255);">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-center subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-bold subscribe-u-items-center subscribe-u-flex subscribe-u-flex-row subscribe-u-grow subscribe-u-min-w-0 subscribe-u-justify-center" style="color: rgb(0, 0, 0);">
+                                                <div class="subscribe-stack subscribe-u-inline-flex">
+                                                    <span class="subscribe-copy-inline subscribe-u-max-w-full subscribe-u-overflow-hidden subscribe-u-text-ellipsis subscribe-u-whitespace-nowrap subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit subscribe-u-text-14 subscribe-u-leading-18">현재 구독 중인 요금제입니다</span>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Features -->
+                            <div class="subscribe-stack subscribe-u-grow subscribe-u-gap-4 subscribe-u-mt-14 subscribe-u-p-18 subscribe-u-pt-18">
+                                <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-mb-7 subscribe-u-w-full" style="color: rgb(182, 185, 188);">
+                                    <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">Premium 베이직의 모든 기능 + 추가 혜택</span>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 22 22" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.855-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.607-.274 1.264-.144 1.897.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">인증 체크마크</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938 9.955-2.683 2.714-6.417 3.31-9.83 1.954l-3.728 1.745c5.347 3.697 11.84 2.782 15.898-1.324 3.219-3.255 4.216-7.692 3.284-11.693l.008.009c-1.351-5.878.332-8.227 3.782-13.031L33 0l-4.54 4.59v-.014L12.743 20.544m-2.263 1.987c-3.837-3.707-3.175-9.446.1-12.755 2.42-2.449 6.388-3.448 9.852-1.979l3.72-1.737c-.67-.49-1.53-1.017-2.515-1.387-4.455-1.854-9.789-.931-13.41 2.728-3.483 3.523-4.579 8.94-2.697 13.561 1.405 3.454-.899 5.898-3.22 8.364C1.49 30.2.666 31.074 0 32l10.478-9.466"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">더 쉬워진 Grok 이용</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M3.75 22h16.5c.414 0 .75-.336.75-.75V2.75c0-.414-.336-.75-.75-.75H3.75c-.414 0-.75.336-.75.75v18.5c0 .414.336.75.75.75zM5 4h14v16H5V4zm2 5h5v2H7V9zm0 4h10v2H7v-2zm0 4h10v2H7v-2zm7-8h3v2h-3V9z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: row; align-items: center;">
+                                        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">고급 애널리틱스</span>
+                                        </div>
+                                        <button aria-label="자세히 알아보기" role="button" type="button"
+                                                class="subscribe-stack subscribe-u-rounded-full subscribe-u-border-solid subscribe-u-border-1 subscribe-u-select-none subscribe-u-text-muted subscribe-u-ml-4 subscribe-u-self-center subscribe-u-py-0 subscribe-u-min-h-22 subscribe-u-min-w-22 subscribe-u-cursor-pointer subscribe-u-duration-0-200 subscribe-u-transition-surface subscribe-u-outline-none"
+                                                style="background-color: transparent; border-color: transparent;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-center subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-bold subscribe-u-items-center subscribe-u-flex subscribe-u-flex-row subscribe-u-grow subscribe-u-min-w-0 subscribe-u-justify-center">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom subscribe-u-h-14 subscribe-u-w-14 subscribe-u-text-tertiary subscribe-u-text-15">
+                                                    <g><path d="M13.5 8.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5S11.17 7 12 7s1.5.67 1.5 1.5zM13 17v-5h-2v5h2zm-1 5.25c5.66 0 10.25-4.59 10.25-10.25S17.66 1.75 12 1.75 1.75 6.34 1.75 12 6.34 22.25 12 22.25zM20.25 12c0 4.56-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12 7.44 3.75 12 3.75s8.25 3.69 8.25 8.25z"></path></g>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 10 10" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M4.43 1.256c.179-.553.961-.553 1.14 0l.642 1.975c.08.248.311.415.571.415H8.86c.581 0 .823.744.352 1.085l-1.68 1.221c-.21.153-.298.424-.218.67l.642 1.976c.18.553-.453 1.012-.923.67l-1.68-1.22c-.21-.153-.495-.153-.706 0l-1.68 1.22c-.47.342-1.103-.117-.923-.67l.642-1.975c.08-.247-.008-.518-.218-.671l-1.68-1.22c-.47-.342-.229-1.086.352-1.086h2.077c.26 0 .49-.167.57-.415l.642-1.975z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">피드에서 광고 덜 보기</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M1.751 10c.06-5.24 4.34-9.5 9.6-9.5h1.3c5.26 0 9.54 4.26 9.6 9.5-.27.95-2.27 1.39-3.4-.1-.57-.75-1.09-1.84-1.72-2.92-.62-1.06-1.32-2.13-2.28-2.7-1.17-.7-2.58-.41-3.6.83-.27.33-.54.72-.81 1.16-.26.41-.52.87-.78 1.35L8.381 10c-.77 1.31-1.48 2.64-2.22 3.3-.69.62-1.38.83-2.18.56-.89-.31-1.66-1.2-2.19-2.19L1.751 10zm10.54 8c-.03-.39-.05-.78-.07-1.18-.02-.39-.03-.78-.04-1.17L12.2 14.5c.18-.33.41-.74.67-1.12.3-.43.65-.9 1.01-1.23.44-.4.91-.55 1.33-.3.36.21.66.61.93 1.07.27.47.52.99.77 1.51.33.69.65 1.4 1.01 1.95.37.55.7.88 1.04 1.02.62.26.86-.06 1.16-.53l.06-.1c.26-.43.56-.88.94-1.22.38-.34.85-.52 1.42-.37.76.2 1.12.85 1.2 1.62v.05c-.16 5.09-4.36 9.2-9.49 9.2h-1.3c-5.13 0-9.33-4.11-9.49-9.2v-.05c.14-.93.79-1.42 1.35-1.6.47-.15.85-.08 1.16.19.31.26.56.66.81 1.12l.04.06c.3.48.61.99 1 1.3.31.24.74.13 1.17-.42.41-.52.81-1.37 1.14-2.38h.01z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: row; align-items: center;">
+                                        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">부스트 답글</span>
+                                        </div>
+                                        <button aria-label="자세히 알아보기" role="button" type="button"
+                                                class="subscribe-stack subscribe-u-rounded-full subscribe-u-border-solid subscribe-u-border-1 subscribe-u-select-none subscribe-u-text-muted subscribe-u-ml-4 subscribe-u-self-center subscribe-u-py-0 subscribe-u-min-h-22 subscribe-u-min-w-22 subscribe-u-cursor-pointer subscribe-u-duration-0-200 subscribe-u-transition-surface subscribe-u-outline-none"
+                                                style="background-color: transparent; border-color: transparent;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-center subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-bold subscribe-u-items-center subscribe-u-flex subscribe-u-flex-row subscribe-u-grow subscribe-u-min-w-0 subscribe-u-justify-center">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom subscribe-u-h-14 subscribe-u-w-14 subscribe-u-text-tertiary subscribe-u-text-15">
+                                                    <g><path d="M13.5 8.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5S11.17 7 12 7s1.5.67 1.5 1.5zM13 17v-5h-2v5h2zm-1 5.25c5.66 0 10.25-4.59 10.25-10.25S17.66 1.75 12 1.75 1.75 6.34 1.75 12 6.34 22.25 12 22.25zM20.25 12c0 4.56-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12 7.44 3.75 12 3.75s8.25 3.69 8.25 8.25z"></path></g>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M3 5.5C3 4.119 4.12 3 5.5 3h13C19.88 3 21 4.119 21 5.5v13c0 1.381-1.12 2.5-2.5 2.5h-13C4.12 21 3 19.881 3 18.5v-13zM5.5 5c-.276 0-.5.224-.5.5v13c0 .276.224.5.5.5h13c.276 0 .5-.224.5-.5v-13c0-.276-.224-.5-.5-.5h-13zM7 8h10v2H7V8zm0 4h7v2H7v-2z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">아티클 작성하기</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ========== Card 3: Premium+ ========== -->
+                        <div data-testid="product-card-BlueVerifiedPlus"
+                             class="subscribe-stack subscribe-plan-card subscribe-u-rounded-16 subscribe-u-grow subscribe-u-max-w-360 subscribe-u-w-360 subscribe-u-bg-rgb-22-24-28 subscribe-u-overflow-hidden subscribe-u-relative subscribe-u-border-transparent subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-border-2 subscribe-u-center-transform-2 subscribe-u-transition-transform-0-3s-ease-in-out">
+                            <div class="subscribe-stack subscribe-u-bg-rgb-42-45-48 subscribe-u-filter-blur-100px subscribe-u-h-full subscribe-u-left--150 subscribe-u-absolute subscribe-u-top-80 subscribe-u-center-transform-3 subscribe-u-w-395-18"></div>
+
+                            <div class="subscribe-stack subscribe-u-grow subscribe-u-p-18 subscribe-u-pt-18">
+                                <!-- Plan name -->
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex-row subscribe-u-gap-7 subscribe-u-justify-start">
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-18 subscribe-u-leading-22 subscribe-u-font-medium" style="color: rgb(255, 255, 255);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">Premium+</span>
+                                    </div>
+                                </div>
+                                <!-- Price -->
+                                <div class="subscribe-stack subscribe-u-items-baseline subscribe-u-flex-row subscribe-u-flex-wrap subscribe-u-mt-14">
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-font-medium subscribe-u-text-28-8 subscribe-u-leading-28-8" style="color: rgb(255, 255, 255);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">₩47,500</span>
+                                    </div>
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-ml-4" style="color: rgb(182, 185, 188);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">/ 월</span>
+                                    </div>
+                                </div>
+                                <!-- Billing info -->
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex-row subscribe-u-mt-7">
+                                    <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular" style="color: rgb(231, 233, 234);">
+                                        <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">연간 청구</span>
+                                    </div>
+                                    <div class="subscribe-stack subscribe-u-self-center subscribe-u-bg-surface-dark subscribe-u-rounded-4 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-ml-7 subscribe-u-py-2 subscribe-u-px-4">
+                                        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-10 subscribe-u-leading-11 subscribe-u-font-regular" style="color: rgb(255, 255, 255);">
+                                            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">17% 절약</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- CTA button -->
+                                <div class="subscribe-stack subscribe-u-shadow-none subscribe-u-mt-7 subscribe-u-pb-0 subscribe-u-sticky">
+                                    <div class="subscribe-stack subscribe-u-shadow-none subscribe-u-mt-7 subscribe-u-pb-0 subscribe-u-sticky">
+                                        <button role="button" data-testid="tierSwitchButton" type="button"
+                                                class="subscribe-stack subscribe-u-rounded-full subscribe-u-border-solid subscribe-u-border-1 subscribe-u-select-none subscribe-u-border-white-strong subscribe-u-min-h-40 subscribe-u-min-w-40 subscribe-u-px-22 subscribe-u-cursor-pointer subscribe-u-duration-0-200 subscribe-u-transition-surface subscribe-u-outline-none"
+                                                style="border-color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-center subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-bold subscribe-u-items-center subscribe-u-flex subscribe-u-flex-row subscribe-u-grow subscribe-u-min-w-0 subscribe-u-justify-center" style="color: rgb(0, 0, 0);">
+                                                <div class="subscribe-stack subscribe-u-inline-flex">
+                                                    <span class="subscribe-copy-inline subscribe-u-max-w-full subscribe-u-overflow-hidden subscribe-u-text-ellipsis subscribe-u-whitespace-nowrap subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit subscribe-u-text-14 subscribe-u-leading-18">Premium+ 등급으로 업그레이드</span>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Features -->
+                            <div class="subscribe-stack subscribe-u-grow subscribe-u-gap-4 subscribe-u-mt-14 subscribe-u-p-18 subscribe-u-pt-18">
+                                <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-mb-7 subscribe-u-w-full" style="color: rgb(182, 185, 188);">
+                                    <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">Premium의 모든 기능 + 추가 혜택</span>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: column;">
+                                        <div class="subscribe-stack" style="display: flex; flex-direction: row;">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">광고 없음</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938 9.955-2.683 2.714-6.417 3.31-9.83 1.954l-3.728 1.745c5.347 3.697 11.84 2.782 15.898-1.324 3.219-3.255 4.216-7.692 3.284-11.693l.008.009c-1.351-5.878.332-8.227 3.782-13.031L33 0l-4.54 4.59v-.014L12.743 20.544m-2.263 1.987c-3.837-3.707-3.175-9.446.1-12.755 2.42-2.449 6.388-3.448 9.852-1.979l3.72-1.737c-.67-.49-1.53-1.017-2.515-1.387-4.455-1.854-9.789-.931-13.41 2.728-3.483 3.523-4.579 8.94-2.697 13.561 1.405 3.454-.899 5.898-3.22 8.364C1.49 30.2.666 31.074 0 32l10.478-9.466"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: row; align-items: center; flex-wrap: wrap; gap: 4px;">
+                                        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">SuperGrok</span>
+                                        </div>
+                                        <div class="subscribe-stack subscribe-u-self-center subscribe-u-bg-surface-dark subscribe-u-rounded-4 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-py-2 subscribe-u-px-4">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-10 subscribe-u-leading-11 subscribe-u-font-regular" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">신규</span>
+                                            </div>
+                                        </div>
+                                        <button aria-label="자세히 알아보기" role="button" type="button"
+                                                class="subscribe-stack subscribe-u-rounded-full subscribe-u-border-solid subscribe-u-border-1 subscribe-u-select-none subscribe-u-text-muted subscribe-u-self-center subscribe-u-py-0 subscribe-u-min-h-22 subscribe-u-min-w-22 subscribe-u-cursor-pointer subscribe-u-duration-0-200 subscribe-u-transition-surface subscribe-u-outline-none"
+                                                style="background-color: transparent; border-color: transparent;">
+                                            <div class="subscribe-copy subscribe-u-items-center subscribe-u-flex subscribe-u-justify-center">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom subscribe-u-h-14 subscribe-u-w-14 subscribe-u-text-tertiary subscribe-u-text-15">
+                                                    <g><path d="M13.5 8.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5S11.17 7 12 7s1.5.67 1.5 1.5zM13 17v-5h-2v5h2zm-1 5.25c5.66 0 10.25-4.59 10.25-10.25S17.66 1.75 12 1.75 1.75 6.34 1.75 12 6.34 22.25 12 22.25zM20.25 12c0 4.56-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12 7.44 3.75 12 3.75s8.25 3.69 8.25 8.25z"></path></g>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-12 subscribe-u-leading-14 subscribe-u-font-regular" style="color: rgb(113, 118, 123); width: 100%;">
+                                            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">월 $30 USD 상당</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M5.651 19h12.698c-.337-1.8-1.023-3.21-1.945-4.19C15.318 13.65 13.838 13 12 13s-3.317.65-4.404 1.81c-.922.98-1.608 2.39-1.945 4.19zm.486-6.08C7.61 11.36 9.578 11 12 11s4.389.36 5.863 1.92c1.473 1.56 2.282 3.94 2.137 7.286V21H4v-.794c-.145-3.347.664-5.726 2.137-7.286zM12 2c1.54 0 3 1.234 3 3.5S13.54 9 12 9s-3-1.234-3-3.5S10.46 2 12 2zm0 2c-.466 0-1 .51-1 1.5S11.534 7 12 7s1-.51 1-1.5S12.466 4 12 4z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: row; align-items: center; flex-wrap: wrap; gap: 4px;">
+                                        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">사용자 아이디 마켓플레이스</span>
+                                        </div>
+                                        <div class="subscribe-stack subscribe-u-self-center subscribe-u-bg-surface-dark subscribe-u-rounded-4 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-py-2 subscribe-u-px-4">
+                                            <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-10 subscribe-u-leading-11 subscribe-u-font-regular" style="color: rgb(255, 255, 255);">
+                                                <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">신규</span>
+                                            </div>
+                                        </div>
+                                        <button aria-label="자세히 알아보기" role="button" type="button"
+                                                class="subscribe-stack subscribe-u-rounded-full subscribe-u-border-solid subscribe-u-border-1 subscribe-u-select-none subscribe-u-text-muted subscribe-u-self-center subscribe-u-py-0 subscribe-u-min-h-22 subscribe-u-min-w-22 subscribe-u-cursor-pointer subscribe-u-duration-0-200 subscribe-u-transition-surface subscribe-u-outline-none"
+                                                style="background-color: transparent; border-color: transparent;">
+                                            <div class="subscribe-copy subscribe-u-items-center subscribe-u-flex subscribe-u-justify-center">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom subscribe-u-h-14 subscribe-u-w-14 subscribe-u-text-tertiary subscribe-u-text-15">
+                                                    <g><path d="M13.5 8.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5S11.17 7 12 7s1.5.67 1.5 1.5zM13 17v-5h-2v5h2zm-1 5.25c5.66 0 10.25-4.59 10.25-10.25S17.66 1.75 12 1.75 1.75 6.34 1.75 12 6.34 22.25 12 22.25zM20.25 12c0 4.56-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12 7.44 3.75 12 3.75s8.25 3.69 8.25 8.25z"></path></g>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M11.998 1.75C6.337 1.75 1.748 6.34 1.748 12s4.589 10.25 10.25 10.25 10.25-4.59 10.25-10.25-4.589-10.25-10.25-10.25zM15.996 15h-2v-3.59l-5.293 5.3-1.414-1.42L12.581 10H8.996V8h7v7z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: row; align-items: center;">
+                                        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">답글이 가장 많은 게시물 부스트</span>
+                                        </div>
+                                        <button aria-label="자세히 알아보기" role="button" type="button"
+                                                class="subscribe-stack subscribe-u-rounded-full subscribe-u-border-solid subscribe-u-border-1 subscribe-u-select-none subscribe-u-text-muted subscribe-u-ml-4 subscribe-u-self-center subscribe-u-py-0 subscribe-u-min-h-22 subscribe-u-min-w-22 subscribe-u-cursor-pointer subscribe-u-duration-0-200 subscribe-u-transition-surface subscribe-u-outline-none"
+                                                style="background-color: transparent; border-color: transparent;">
+                                            <div class="subscribe-copy subscribe-u-items-center subscribe-u-flex subscribe-u-justify-center">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom subscribe-u-h-14 subscribe-u-w-14 subscribe-u-text-tertiary subscribe-u-text-15">
+                                                    <g><path d="M13.5 8.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5S11.17 7 12 7s1.5.67 1.5 1.5zM13 17v-5h-2v5h2zm-1 5.25c5.66 0 10.25-4.59 10.25-10.25S17.66 1.75 12 1.75 1.75 6.34 1.75 12 6.34 22.25 12 22.25zM20.25 12c0 4.56-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12 7.44 3.75 12 3.75s8.25 3.69 8.25 8.25z"></path></g>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="subscribe-stack subscribe-u-items-center subscribe-u-text-ink subscribe-u-flex-row subscribe-u-mb-7">
+                                    <div class="subscribe-stack subscribe-u-items-center subscribe-u-flex subscribe-u-flex-col subscribe-u-shrink-0">
+                                        <div class="subscribe-stack subscribe-u-rounded-5 subscribe-u-shrink-0 subscribe-u-p-1">
+                                            <div class="subscribe-stack subscribe-u-backdrop-blur-2 subscribe-u-bg-surface-dark subscribe-u-rounded-8 subscribe-u-border-t-divider-dark subscribe-u-border-t-1 subscribe-u-text-white subscribe-u-mr-7 subscribe-u-p-6">
+                                                <div class="subscribe-stack subscribe-u-text-soft subscribe-u-text-15 subscribe-u-justify-center">
+                                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-h-1-25em subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom">
+                                                        <g><path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.824 5.262l4.781 4.781-1.414 1.414-4.781-4.781c-1.447 1.142-3.276 1.824-5.262 1.824-4.694 0-8.5-3.806-8.5-8.5z"></path></g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-stack" style="display: flex; flex-direction: row; align-items: center;">
+                                        <div dir="ltr" class="subscribe-copy subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-brand subscribe-u-text-14 subscribe-u-leading-18 subscribe-u-font-regular subscribe-u-items-center subscribe-u-inline-flex" style="color: rgb(255, 255, 255);">
+                                            <span class="subscribe-copy-inline subscribe-u-min-w-0 subscribe-u-text-inherit subscribe-u-break-words subscribe-u-font-inherit">Radar 고급 검색</span>
+                                        </div>
+                                        <button aria-label="자세히 알아보기" role="button" type="button"
+                                                class="subscribe-stack subscribe-u-rounded-full subscribe-u-border-solid subscribe-u-border-1 subscribe-u-select-none subscribe-u-text-muted subscribe-u-ml-4 subscribe-u-self-center subscribe-u-py-0 subscribe-u-min-h-22 subscribe-u-min-w-22 subscribe-u-cursor-pointer subscribe-u-duration-0-200 subscribe-u-transition-surface subscribe-u-outline-none"
+                                                style="background-color: transparent; border-color: transparent;">
+                                            <div class="subscribe-copy subscribe-u-items-center subscribe-u-flex subscribe-u-justify-center">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true" class="subscribe-u-inline-block subscribe-u-fill-current subscribe-u-max-w-full subscribe-u-relative subscribe-u-select-none subscribe-u-align-text-bottom subscribe-u-h-14 subscribe-u-w-14 subscribe-u-text-tertiary subscribe-u-text-15">
+                                                    <g><path d="M13.5 8.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5S11.17 7 12 7s1.5.67 1.5 1.5zM13 17v-5h-2v5h2zm-1 5.25c5.66 0 10.25-4.59 10.25-10.25S17.66 1.75 12 1.75 1.75 6.34 1.75 12 6.34 22.25 12 22.25zM20.25 12c0 4.56-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12 7.44 3.75 12 3.75s8.25 3.69 8.25 8.25z"></path></g>
+                                                </svg>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- end cards row -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- end subscribe-app -->
+
+<script src="/static/js/Subscribe/event.js"></script>
+</body>
+</html>
