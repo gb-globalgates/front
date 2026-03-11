@@ -38,6 +38,7 @@ window.onload = () => {
     // 반응형 js -----------------------------------
     const userListWrapper = document.querySelector(".Chat-UserList-Wrapper");
     const backBtn = document.getElementById("chat-back-btn");
+    const bottomNav = document.querySelector(".mobile-nav");
 
     // 좌측 검색바
     const searchBarPlaceholder = document.querySelector(
@@ -60,6 +61,7 @@ window.onload = () => {
     function openChatRoom() {
         newChatDiv.classList.add("off");
         chatDiv.classList.remove("off");
+        bottomNav.style.display = "none";
         if (isMobile()) {
             userListWrapper.classList.add("off");
         }
@@ -69,6 +71,7 @@ window.onload = () => {
     function closeChatRoom() {
         chatDiv.classList.add("off");
         newChatDiv.classList.remove("off");
+        bottomNav.style.display = "flex";
         if (isMobile()) {
             userListWrapper.classList.remove("off");
         }
