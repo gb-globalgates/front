@@ -53,6 +53,7 @@ window.onload = () => {
     const previewDate     = document.querySelector("#previewDate");
 
     const modalImageViewer = document.querySelector("#modalImageViewer");
+    const modalVideoViewer = document.querySelector("#modalVideoViewer");
     const modalNewsAutoSettings = document.querySelector("#modalNewsAutoSettings");
     const newsSettingsBtn = document.querySelector("#newsSettingsBtn");
 
@@ -79,6 +80,17 @@ window.onload = () => {
         }
     };
 
+
+    // 게시물 첨부파일 더미데이터 (이미지 최대4 / 영상 최대1 / 없음)
+    const postDummyAttach = [
+        { type: "image", srcs: ["../../static/images/admin/file-ex.PNG", "../../static/images/admin/file-ex.PNG", "../../static/images/admin/file-ex.PNG"] },
+        { type: "video", src: "../../static/video/Video-Project-2.mp4" },
+        { type: "image", srcs: ["../../static/images/admin/file-ex.PNG", "../../static/images/admin/file-ex.PNG", "../../static/images/admin/file-ex.PNG", "../../static/images/admin/file-ex.PNG"] },
+        { type: "none" },
+        { type: "image", srcs: ["../../static/images/admin/file-ex.PNG"] },
+        { type: "video", src: "../../static/video/Video-Project-2.mp4" },
+        { type: "image", srcs: ["../../static/images/admin/file-ex.PNG", "../../static/images/admin/file-ex.PNG"] },
+    ];
 
     // 뉴스 더미데이터
     const aiNews = {
@@ -393,6 +405,38 @@ window.onload = () => {
             category: document.querySelector("#peCategory").value
         };
 
+        // 첨부파일 렌더링
+        const trsAll = postTbody.querySelectorAll(".div-tr");
+        let rowIdx = 0;
+        for (let i = 0; i < trsAll.length; i++) {
+            if (trsAll[i] === tr) { rowIdx = i; break; }
+        }
+        const attach = postDummyAttach[rowIdx % postDummyAttach.length];
+        const postAttachImages = document.querySelector("#postAttachImages");
+        const postAttachVideo  = document.querySelector("#postAttachVideo");
+        const postAttachNone   = document.querySelector("#postAttachNone");
+
+        postAttachImages.innerHTML = "";
+        postAttachImages.classList.add("off");
+        postAttachVideo.classList.add("off");
+        postAttachNone.classList.add("off");
+
+        if (attach.type === "image") {
+            attach.srcs.forEach((src) => {
+                const img = document.createElement("img");
+                img.src = src;
+                img.className = "report-attach-thumb";
+                img.alt = "첨부 이미지";
+                postAttachImages.appendChild(img);
+            });
+            postAttachImages.classList.remove("off");
+        } else if (attach.type === "video") {
+            document.querySelector("#viewerVideo").src = attach.src;
+            postAttachVideo.classList.remove("off");
+        } else {
+            postAttachNone.classList.remove("off");
+        }
+
         document.querySelector("#modalPostSave").disabled = true;
         modalPostEdit.classList.remove("off");
     });
@@ -636,6 +680,32 @@ window.onload = () => {
         }
     });
 
+    // 5-6. 게시물 모달 첨부이미지 클릭 → 이미지 뷰어
+    document.querySelector("#postAttachImages").addEventListener("click", (e) => {
+        const thumb = e.target.closest(".report-attach-thumb");
+        if (!thumb) return;
+        document.querySelector("#imgViewerImg").src = thumb.src;
+        modalImageViewer.classList.remove("off");
+    });
+
+    // 5-7. 게시물 모달 동영상 썸네일 클릭 → 동영상 뷰어
+    document.querySelector("#postVideoThumb").addEventListener("click", (e) => {
+        modalVideoViewer.classList.remove("off");
+    });
+
+    // 동영상 뷰어 닫기
+    document.querySelector("#videoViewerClose").addEventListener("click", (e) => {
+        document.querySelector("#viewerVideo").pause();
+        modalVideoViewer.classList.add("off");
+    });
+
+    modalVideoViewer.addEventListener("click", (e) => {
+        if (e.target === modalVideoViewer) {
+            document.querySelector("#viewerVideo").pause();
+            modalVideoViewer.classList.add("off");
+        }
+    });
+
     // 9-3-1. 첨부 이미지 썸네일 클릭 → 이미지 뷰어
     document.querySelector("#reportImages").addEventListener("click", (e) => {
         const thumb = e.target.closest(".report-attach-thumb");
@@ -659,7 +729,7 @@ window.onload = () => {
 
 
 
-    // 12. 뉴스 자동등록 설정 모달
+    // 10. 뉴스 자동등록 설정 모달
     newsSettingsBtn.addEventListener("click", (e) => {
         modalNewsAutoSettings.classList.remove("off");
     });
@@ -1029,7 +1099,7 @@ window.onload = () => {
         });
     }
 
-    bindFilter("filterTrend", p => { trendPeriod = p; }, () => { 
+    bindFilter("filterTrend", p => { trendPeriod = p; }, () => {
         if (drawnPortals.has(6)) drawMemberTrend(); });
     bindFilter("filterHourly",  p => { hourlyPeriod = p; }, () => { if (drawnPortals.has(6)) drawHourly(); });
     bindFilter("filterPostMonthly", p => { postMonthlyPeriod = p; },  () => { if (drawnPortals.has(7)) drawPostMonthly(); });
