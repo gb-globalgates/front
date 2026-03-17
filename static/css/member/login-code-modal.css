@@ -152,9 +152,11 @@ body {
 
 .code-action.is-primary {
     background: var(--primary);
+    font-size: 24px;
     border-color: var(--primary);
     color: #ffffff;
 }
+
 
 
 
