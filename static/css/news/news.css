@@ -2878,12 +2878,11 @@ body.modal-open {
 }
 
 .composerGauge {
-    --gauge-progress: 0deg;
     position: relative;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: conic-gradient(#1d9bf0 var(--gauge-progress), #d7dfe4 0deg);
+    background: conic-gradient(#1d9bf0 0deg, #d7dfe4 0deg);
 }
 
 .composerGauge::before {

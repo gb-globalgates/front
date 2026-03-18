@@ -1,7 +1,6 @@
-window.onload = function () {
-    // ===== 1. DOM =====
-    // 탭 네비게이션 링크 목록
-    const tabLinks = document.querySelectorAll(".tab-link");
+// ===== 1. DOM =====
+// 탭 네비게이션 링크 목록
+const tabLinks = document.querySelectorAll(".tab-link");
     // 알림 탭 버튼 목록 (전체/확인됨/언급)
     const notifTabs = document.querySelectorAll(".notif-tab");
     // 하단 네비게이션 바 (스크롤 시 숨김/표시)
@@ -1245,13 +1244,13 @@ window.onload = function () {
     // 커서 위치 DOM에서 서식 상태를 읽어 pendingReplyFormats를 동기화한다
     function syncActiveFormatsFromCursor() {
         if (!replyEditor) return;
-        var sel = window.getSelection();
+        const sel = window.getSelection();
         if (!sel || sel.rangeCount === 0) return;
-        var range = sel.getRangeAt(0);
+        const range = sel.getRangeAt(0);
         if (!replyEditor.contains(range.startContainer)) return;
-        var node = range.startContainer;
-        var el = node.nodeType === 3 ? node.parentElement : node;
-        var isBold = false, isItalic = false;
+        const node = range.startContainer;
+        let el = node.nodeType === 3 ? node.parentElement : node;
+        let isBold = false, isItalic = false;
         while (el && el !== replyEditor) {
             if (el.style) {
                 if (el.style.fontWeight === "bold" || el.style.fontWeight === "700") isBold = true;
@@ -1266,9 +1265,9 @@ window.onload = function () {
     // 커서가 떠난 빈 서식 span을 제거한다
     function cleanupEmptyFormatSpans() {
         if (!replyEditor) return;
-        var sel = window.getSelection();
-        var cursorNode = sel && sel.rangeCount > 0 ? sel.getRangeAt(0).startContainer : null;
-        var spans = replyEditor.querySelectorAll("span");
+        const sel = window.getSelection();
+        const cursorNode = sel && sel.rangeCount > 0 ? sel.getRangeAt(0).startContainer : null;
+        const spans = replyEditor.querySelectorAll("span");
         spans.forEach(function(span) {
             if (span.textContent === "" && !span.contains(cursorNode)) {
                 span.parentNode && span.parentNode.removeChild(span);
@@ -1278,8 +1277,8 @@ window.onload = function () {
 
     // 커서 위치의 가장 가까운 서식 span을 반환한다 (없으면 null)
     function getFormatSpanAtCursor(range) {
-        var node = range.startContainer;
-        var el = node.nodeType === 3 ? node.parentElement : node;
+        const node = range.startContainer;
+        let el = node.nodeType === 3 ? node.parentElement : node;
         while (el && el !== replyEditor) {
             if (el.tagName === "SPAN") return el;
             el = el.parentElement;
@@ -1291,18 +1290,18 @@ window.onload = function () {
     // 같은 서식이면 false(브라우저 기본 동작 허용), 다른 서식이면 true(직접 처리)
     function handleFormatKeydown(e) {
         if (e.key.length !== 1 || e.ctrlKey || e.metaKey || e.altKey) return false;
-        var sel = window.getSelection();
+        const sel = window.getSelection();
         if (!sel || sel.rangeCount === 0) return false;
-        var range = sel.getRangeAt(0);
+        let range = sel.getRangeAt(0);
         if (!replyEditor.contains(range.startContainer)) return false;
 
-        var isBold = pendingReplyFormats.has("bold");
-        var isItalic = pendingReplyFormats.has("italic");
+        const isBold = pendingReplyFormats.has("bold");
+        const isItalic = pendingReplyFormats.has("italic");
 
         // 현재 커서가 속한 span의 서식 확인
-        var parentSpan = getFormatSpanAtCursor(range);
-        var curIsBold   = parentSpan ? parentSpan.style.fontWeight === "bold" : false;
-        var curIsItalic = parentSpan ? parentSpan.style.fontStyle === "italic" : false;
+        const parentSpan = getFormatSpanAtCursor(range);
+        const curIsBold   = parentSpan ? parentSpan.style.fontWeight === "bold" : false;
+        const curIsItalic = parentSpan ? parentSpan.style.fontStyle === "italic" : false;
 
         // 서식이 같으면 브라우저가 처리
         if (isBold === curIsBold && isItalic === curIsItalic) return false;
@@ -1314,7 +1313,7 @@ window.onload = function () {
 
         // 현재 span 내부에 있으면 span 밖(뒤)으로 커서 탈출
         if (parentSpan) {
-            var escapeRange = document.createRange();
+            const escapeRange = document.createRange();
             escapeRange.setStartAfter(parentSpan);
             escapeRange.collapse(true);
             sel.removeAllRanges();
@@ -1323,15 +1322,15 @@ window.onload = function () {
         }
 
         // 새 서식 span 생성 후 글자 삽입
-        var span = document.createElement("span");
+        const span = document.createElement("span");
         if (isBold)   span.style.fontWeight = "bold";
         if (isItalic) span.style.fontStyle  = "italic";
-        var textNode = document.createTextNode(e.key);
+        const textNode = document.createTextNode(e.key);
         span.appendChild(textNode);
         range.insertNode(span);
 
         // 커서를 span 내부 글자 뒤로 이동
-        var newRange = document.createRange();
+        const newRange = document.createRange();
         newRange.setStart(textNode, e.key.length);
         newRange.collapse(true);
         sel.removeAllRanges();
@@ -1650,9 +1649,9 @@ window.onload = function () {
         if (content.length > replyMaxLength) {
             content = content.slice(0, replyMaxLength);
             // innerHTML 유지(서식 보존): 텍스트만 자름
-            var walker = document.createTreeWalker(replyEditor, NodeFilter.SHOW_TEXT);
-            var remaining2 = replyMaxLength;
-            var node2;
+            const walker = document.createTreeWalker(replyEditor, NodeFilter.SHOW_TEXT);
+            let remaining2 = replyMaxLength;
+            let node2;
             while ((node2 = walker.nextNode())) {
                 if (remaining2 <= 0) { node2.textContent = ""; }
                 else if (node2.textContent.length > remaining2) {
@@ -1674,7 +1673,7 @@ window.onload = function () {
             replySubmitButton.disabled = !canSubmit;
         }
         if (replyGauge) {
-            replyGauge.style.setProperty("--gauge-progress", progress);
+            replyGauge.style.background = "conic-gradient(#1d9bf0 " + progress + ", #d7dfe4 0deg)";
             replyGauge.setAttribute("aria-valuenow", String(currentLength));
         }
         if (replyGaugeText) {
@@ -3128,7 +3127,6 @@ window.onload = function () {
         replyEditor.parentElement?.appendChild(card);
     }
 
-};
 
 // contenteditable에 공통으로 쓰는 커서 이동 유틸이다.
 function placeCaretAtEnd(element) {

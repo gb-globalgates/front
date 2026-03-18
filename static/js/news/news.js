@@ -1,5 +1,5 @@
-window.addEventListener("DOMContentLoaded", function () {
-    function formatCount(num) {
+window.onload = () => {
+function formatCount(num) {
         if (num >= 1000000) {
             return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
         }
@@ -112,9 +112,9 @@ window.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        navigator.clipboard.writeText(permalink).then(function () {
+        navigator.clipboard.writeText(permalink).then(() => {
             showShareToast("클립보드로 복사함");
-        }).catch(function () {
+        }).catch(() => {
             showShareToast("링크를 복사하지 못했습니다");
         });
     }
@@ -126,13 +126,13 @@ window.addEventListener("DOMContentLoaded", function () {
         const modal = document.createElement("div");
         modal.className = "share-sheet";
         modal.innerHTML = '<div class="share-sheet__backdrop" data-share-close="true"></div><div class="share-sheet__card" role="dialog" aria-modal="true" aria-labelledby="share-chat-title"><div class="share-sheet__header"><button type="button" class="share-sheet__icon-btn" data-share-close="true" aria-label="돌아가기"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z"></path></g></svg></button><h2 id="share-chat-title" class="share-sheet__title">공유하기</h2><span class="share-sheet__header-spacer"></span></div><div class="share-sheet__search"><input type="text" class="share-sheet__search-input" placeholder="검색" aria-label="검색"></div><div class="share-sheet__list"><button type="button" class="share-sheet__user" data-share-user-id="tradehub-kr"><span class="share-sheet__user-avatar"><img src="https://pbs.twimg.com/profile_images/2029361845321207808/LltLeaLS_bigger.jpg" alt="TradeHub KR"></span><span class="share-sheet__user-body"><span class="share-sheet__user-name">TradeHub KR</span><span class="share-sheet__user-handle">@TradeHub_KR</span></span></button></div></div>';
-        modal.addEventListener("click", function (event) {
+        modal.addEventListener("click", (e) => {
             if (
-                event.target.closest("[data-share-close='true']") ||
-                event.target.classList.contains("share-sheet__backdrop") ||
-                event.target.closest(".share-sheet__user")
+                e.target.closest("[data-share-close='true']") ||
+                e.target.classList.contains("share-sheet__backdrop") ||
+                e.target.closest(".share-sheet__user")
             ) {
-                event.preventDefault();
+                e.preventDefault();
                 closeShareModal();
             }
         });
@@ -150,24 +150,24 @@ window.addEventListener("DOMContentLoaded", function () {
         const modal = document.createElement("div");
         modal.className = "share-sheet";
         modal.innerHTML = '<div class="share-sheet__backdrop" data-share-close="true"></div><div class="share-sheet__card share-sheet__card--bookmark" role="dialog" aria-modal="true" aria-labelledby="share-bookmark-title"><div class="share-sheet__header"><button type="button" class="share-sheet__icon-btn" data-share-close="true" aria-label="닫기"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M10.59 12 4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z"></path></g></svg></button><h2 id="share-bookmark-title" class="share-sheet__title">폴더에 추가</h2><span class="share-sheet__header-spacer"></span></div><button type="button" class="share-sheet__create-folder">새 북마크 폴더 만들기</button><button type="button" class="share-sheet__folder" data-share-folder="all-bookmarks"><span class="share-sheet__folder-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M2.998 8.5c0-1.38 1.119-2.5 2.5-2.5h9c1.381 0 2.5 1.12 2.5 2.5v14.12l-7-3.5-7 3.5V8.5zM18.5 2H8.998v2H18.5c.275 0 .5.224.5.5V15l2 1.4V4.5c0-1.38-1.119-2.5-2.5-2.5z"></path></g></svg></span><span class="share-sheet__folder-name">모든 북마크</span><span class="share-sheet__folder-check' + (isBookmarked ? ' share-sheet__folder-check--active' : '') + '"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"></path></g></svg></span></button></div>';
-        modal.addEventListener("click", function (event) {
+        modal.addEventListener("click", (e) => {
             if (
-                event.target.closest("[data-share-close='true']") ||
-                event.target.classList.contains("share-sheet__backdrop")
+                e.target.closest("[data-share-close='true']") ||
+                e.target.classList.contains("share-sheet__backdrop")
             ) {
-                event.preventDefault();
+                e.preventDefault();
                 closeShareModal();
                 return;
             }
 
-            if (event.target.closest(".share-sheet__create-folder")) {
-                event.preventDefault();
+            if (e.target.closest(".share-sheet__create-folder")) {
+                e.preventDefault();
                 closeShareModal();
                 return;
             }
 
-            if (event.target.closest("[data-share-folder='all-bookmarks']")) {
-                event.preventDefault();
+            if (e.target.closest("[data-share-folder='all-bookmarks']")) {
+                e.preventDefault();
                 setBookmarkButtonState(bookmarkButton, !isBookmarked);
                 closeShareModal();
             }
@@ -189,16 +189,16 @@ window.addEventListener("DOMContentLoaded", function () {
         const layer = document.createElement("div");
         layer.className = "layers-dropdown-container";
         layer.innerHTML = '<div class="layers-overlay"></div><div class="layers-dropdown-inner"><div role="menu" class="dropdown-menu" style="top: ' + top + 'px; right: ' + right + 'px; display: flex;"><div><div class="dropdown-inner"><button type="button" role="menuitem" class="menu-item share-menu-item share-menu-item--copy"><span class="menu-item__icon share-menu-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M18.36 5.64c-1.95-1.96-5.11-1.96-7.07 0L9.88 7.05 8.46 5.64l1.42-1.42c2.73-2.73 7.16-2.73 9.9 0 2.73 2.74 2.73 7.17 0 9.9l-1.42 1.42-1.41-1.42 1.41-1.41c1.96-1.96 1.96-5.12 0-7.07zm-2.12 3.53l-7.07 7.07-1.41-1.41 7.07-7.07 1.41 1.41zm-12.02.71l1.42-1.42 1.41 1.42-1.41 1.41c-1.96 1.96-1.96 5.12 0 7.07 1.95 1.96 5.11 1.96 7.07 0l1.41-1.41 1.42 1.41-1.42 1.42c-2.73 2.73-7.16 2.73-9.9 0-2.73-2.74-2.73-7.17 0-9.9z"></path></g></svg></span><span class="menu-item__label">링크 복사하기</span></button><button type="button" role="menuitem" class="menu-item share-menu-item share-menu-item--chat"><span class="menu-item__icon share-menu-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M1.998 5.5c0-1.381 1.119-2.5 2.5-2.5h15c1.381 0 2.5 1.119 2.5 2.5v13c0 1.381-1.119 2.5-2.5 2.5h-15c-1.381 0-2.5-1.119-2.5-2.5v-13zm2.5-.5c-.276 0-.5.224-.5.5v2.764l8 3.638 8-3.636V5.5c0-.276-.224-.5-.5-.5h-15zm15.5 5.463l-8 3.636-8-3.638V18.5c0 .276.224.5.5.5h15c.276 0 .5-.224.5-.5v-8.037z"></path></g></svg></span><span class="menu-item__label">Chat으로 전송하기</span></button><button type="button" role="menuitem" class="menu-item share-menu-item share-menu-item--bookmark"><span class="menu-item__icon share-menu-item__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M18 3V0h2v3h3v2h-3v3h-2V5h-3V3zm-7.5 1a.5.5 0 00-.5.5V7h3.5A2.5 2.5 0 0116 9.5v3.48l3 2.1V11h2v7.92l-5-3.5v7.26l-6.5-3.54L3 22.68V9.5A2.5 2.5 0 015.5 7H8V4.5A2.5 2.5 0 0110.5 2H12v2zm-5 5a.5.5 0 00-.5.5v9.82l4.5-2.46 4.5 2.46V9.5a.5.5 0 00-.5-.5z"></path></g></svg></span><span class="menu-item__label">폴더에 북마크 추가하기</span></button></div></div></div></div>';
-        layer.addEventListener("click", function (event) {
-            const actionButton = event.target.closest(".share-menu-item");
+        layer.addEventListener("click", (e) => {
+            const actionButton = e.target.closest(".share-menu-item");
 
             if (!actionButton || !activeShareButton) {
-                event.stopPropagation();
+                e.stopPropagation();
                 return;
             }
 
-            event.preventDefault();
-            event.stopPropagation();
+            e.preventDefault();
+            e.stopPropagation();
 
             if (actionButton.classList.contains("share-menu-item--copy")) {
                 copyShareLink(activeShareButton);
@@ -232,7 +232,7 @@ window.addEventListener("DOMContentLoaded", function () {
     let activeShareModal = null;
 
     if (backButton) {
-        backButton.addEventListener("click", function () {
+        backButton.addEventListener("click", (e) => {
             if (window.history.length > 1) {
                 window.history.back();
                 return;
@@ -242,7 +242,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    document.querySelectorAll(".tweet-action-btn-like").forEach(function (likeButton) {
+    document.querySelectorAll(".tweet-action-btn-like").forEach((likeButton) => {
         const countElement = likeButton.querySelector(".tweet-action-count");
         const path = likeButton.querySelector("svg path");
 
@@ -255,7 +255,7 @@ window.addEventListener("DOMContentLoaded", function () {
         let count = Number(likeButton.dataset.count || countElement.textContent.replace(/[^0-9]/g, ""));
         let isLiked = false;
 
-        likeButton.addEventListener("click", function () {
+        likeButton.addEventListener("click", (e) => {
             isLiked = !isLiked;
             count += isLiked ? 1 : -1;
 
@@ -267,7 +267,7 @@ window.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    document.querySelectorAll(".tweet-action-btn-bookmark").forEach(function (bookmarkButton) {
+    document.querySelectorAll(".tweet-action-btn-bookmark").forEach((bookmarkButton) => {
         const path = bookmarkButton.querySelector("svg path");
 
         if (!path) {
@@ -276,17 +276,17 @@ window.addEventListener("DOMContentLoaded", function () {
 
         let isBookmarked = false;
 
-        bookmarkButton.addEventListener("click", function () {
+        bookmarkButton.addEventListener("click", (e) => {
             isBookmarked = !isBookmarked;
             setBookmarkButtonState(bookmarkButton, isBookmarked);
             showToast(isBookmarked ? "북마크에 저장되었습니다." : "북마크가 해제되었습니다.");
         });
     });
 
-    document.querySelectorAll(".tweet-action-btn-share").forEach(function (shareButton) {
-        shareButton.addEventListener("click", function (event) {
-            event.preventDefault();
-            event.stopPropagation();
+    document.querySelectorAll(".tweet-action-btn-share").forEach((shareButton) => {
+        shareButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
 
             if (activeShareButton === shareButton) {
                 closeShareDropdown();
@@ -298,8 +298,8 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     if (sortButton && sortDropdown) {
-        sortButton.addEventListener("click", function (event) {
-            event.stopPropagation();
+        sortButton.addEventListener("click", (e) => {
+            e.stopPropagation();
             const willOpen = !sortDropdown.classList.contains("show");
             closeSortMenu();
 
@@ -309,17 +309,17 @@ window.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        sortDropdown.querySelectorAll(".dropdown-item").forEach(function (item) {
-            item.addEventListener("click", function (event) {
-                event.stopPropagation();
+        sortDropdown.querySelectorAll(".dropdown-item").forEach((item) => {
+            item.addEventListener("click", (e) => {
+                e.stopPropagation();
                 sortButton.querySelector("span").textContent = item.textContent;
                 closeSortMenu();
             });
         });
 
         document.addEventListener("click", closeSortMenu);
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
                 closeSortMenu();
                 closeShareDropdown();
                 closeShareModal();
@@ -328,16 +328,18 @@ window.addEventListener("DOMContentLoaded", function () {
         document.addEventListener("scroll", closeSortMenu, true);
     }
 
-    document.addEventListener("click", function () {
+    document.addEventListener("click", (e) => {
         closeShareDropdown();
     });
 
     if (replyInput && replySubmit) {
-        replyInput.addEventListener("input", function () {
+        replyInput.addEventListener("input", (e) => {
             const hasValue = replyInput.value.trim().length > 0;
 
             replySubmit.disabled = !hasValue;
             replySubmit.classList.toggle("disabled", !hasValue);
         });
     }
-});
+
+
+};

@@ -52,15 +52,15 @@ if (tabPopular && tabLatest && tabMembers && popularSection && latestSection && 
 }
 
 window.addEventListener("load", function () {
-    var searchForm = document.getElementById("searchForm");
-    var searchInput = document.getElementById("searchInput");
-    var searchClearBtn = document.getElementById("searchClearBtn");
-    var searchPanel = document.getElementById("searchPanel");
-    var searchPanelEmpty = document.getElementById("searchPanelEmpty");
-    var searchRecentSec = document.getElementById("searchRecentSection");
-    var searchResultsEl = document.getElementById("searchResults");
-    var searchResultTopic = document.getElementById("searchResultTopic");
-    var searchResultLabel = document.getElementById("searchResultLabel");
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("searchInput");
+    const searchClearBtn = document.getElementById("searchClearBtn");
+    const searchPanel = document.getElementById("searchPanel");
+    const searchPanelEmpty = document.getElementById("searchPanelEmpty");
+    const searchRecentSec = document.getElementById("searchRecentSection");
+    const searchResultsEl = document.getElementById("searchResults");
+    const searchResultTopic = document.getElementById("searchResultTopic");
+    const searchResultLabel = document.getElementById("searchResultLabel");
 
     if (!searchForm || !searchInput || !searchPanel) {
         return;
@@ -101,7 +101,7 @@ window.addEventListener("load", function () {
     }
 
     function updatePanel() {
-        var value = searchInput.value.trim();
+        const value = searchInput.value.trim();
         updateSearchClearButton();
 
         if (value.length > 0) {
@@ -163,13 +163,13 @@ window.addEventListener("load", function () {
 
     if (searchRecentSec) {
         searchRecentSec.addEventListener("click", function (event) {
-            var deleteBtn = event.target.closest(".searchRecentDeleteBtn");
+            const deleteBtn = event.target.closest(".searchRecentDeleteBtn");
             if (!deleteBtn) {
                 return;
             }
 
             event.stopPropagation();
-            var searchItem = deleteBtn.closest(".searchResultItem");
+            const searchItem = deleteBtn.closest(".searchResultItem");
             if (searchItem) {
                 searchItem.remove();
             }
@@ -177,7 +177,7 @@ window.addEventListener("load", function () {
             updatePanel();
         });
 
-        var clearAllBtn = searchRecentSec.querySelector(".searchRecentClearAll");
+        const clearAllBtn = searchRecentSec.querySelector(".searchRecentClearAll");
         if (clearAllBtn) {
             clearAllBtn.addEventListener("click", function (event) {
                 event.stopPropagation();
@@ -195,8 +195,8 @@ window.addEventListener("load", function () {
 
 // postMoreButton 더보기 드롭다운 (팔로우/차단/신고)
 (function () {
-    var followState = {};
-    var reportReasons = [
+    let followState = {};
+    const reportReasons = [
         "다른 회사 제품 도용 신고",
         "실제 존재하지 않는 제품 등록 신고",
         "스펙·원산지 허위 표기 신고",
@@ -205,23 +205,23 @@ window.addEventListener("load", function () {
         "반복적인 동일 게시물 신고"
     ];
 
-    var activeMoreDropdown = null;
-    var activeMoreButton = null;
-    var activeMoreModal = null;
+    let activeMoreDropdown = null;
+    let activeMoreButton = null;
+    let activeMoreModal = null;
 
     function getUserMetaFromButton(button) {
-        var card = button.closest(".postCard");
-        var handleEl = card ? card.querySelector(".postHandle") : null;
-        var nameEl   = card ? card.querySelector(".postName")   : null;
-        var handle = handleEl ? (handleEl.textContent || "").trim() : "@user";
-        var name   = nameEl   ? (nameEl.textContent   || "").trim() : "사용자";
+        const card = button.closest(".postCard");
+        const handleEl = card ? card.querySelector(".postHandle") : null;
+        const nameEl   = card ? card.querySelector(".postName")   : null;
+        const handle = handleEl ? (handleEl.textContent || "").trim() : "@user";
+        const name   = nameEl   ? (nameEl.textContent   || "").trim() : "사용자";
         return { handle: handle, name: name };
     }
 
     function showPostMoreToast(message) {
-        var existing = document.querySelector(".notification-toast");
+        const existing = document.querySelector(".notification-toast");
         if (existing) { existing.remove(); }
-        var toast = document.createElement("div");
+        const toast = document.createElement("div");
         toast.className = "notification-toast";
         toast.textContent = message;
         document.body.appendChild(toast);
@@ -246,11 +246,11 @@ window.addEventListener("load", function () {
     }
 
     function openBlockModal(button) {
-        var meta = getUserMetaFromButton(button);
-        var handle = meta.handle;
+        const meta = getUserMetaFromButton(button);
+        const handle = meta.handle;
         closePostMoreDropdown();
         closePostMoreModal();
-        var modal = document.createElement("div");
+        const modal = document.createElement("div");
         modal.className = "notification-dialog notification-dialog--block";
         modal.innerHTML =
             '<div class="notification-dialog__backdrop"></div>' +
@@ -285,15 +285,15 @@ window.addEventListener("load", function () {
     function openReportModal(button) {
         closePostMoreDropdown();
         closePostMoreModal();
-        var listHtml = "";
-        for (var i = 0; i < reportReasons.length; i++) {
+        let listHtml = "";
+        for (let i = 0; i < reportReasons.length; i++) {
             listHtml +=
                 '<li><button type="button" class="notification-report__item">' +
                     '<span>' + reportReasons[i] + '</span>' +
                     '<svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M9.293 6.293 10.707 4.88 17.828 12l-7.121 7.12-1.414-1.413L14.999 12z"></path></g></svg>' +
                 '</button></li>';
         }
-        var modal = document.createElement("div");
+        const modal = document.createElement("div");
         modal.className = "notification-dialog notification-dialog--report";
         modal.innerHTML =
             '<div class="notification-dialog__backdrop"></div>' +
@@ -330,10 +330,10 @@ window.addEventListener("load", function () {
     }
 
     function handleDropdownAction(button, actionClass) {
-        var meta = getUserMetaFromButton(button);
-        var handle = meta.handle;
+        const meta = getUserMetaFromButton(button);
+        const handle = meta.handle;
         if (actionClass === "menu-item--follow-toggle") {
-            var isF = followState[handle] ? true : false;
+            const isF = followState[handle] ? true : false;
             followState[handle] = !isF;
             closePostMoreDropdown();
             showPostMoreToast(isF ? (handle + " 님 팔로우를 취소했습니다") : (handle + " 님을 팔로우했습니다"));
@@ -350,19 +350,19 @@ window.addEventListener("load", function () {
 
     function openPostMoreDropdown(button) {
         closePostMoreDropdown();
-        var meta = getUserMetaFromButton(button);
-        var handle = meta.handle;
-        var isF = followState[handle] ? true : false;
-        var rect = button.getBoundingClientRect();
-        var top   = rect.bottom + window.scrollY + 8;
-        var right = Math.max(16, window.innerWidth - rect.right);
+        const meta = getUserMetaFromButton(button);
+        const handle = meta.handle;
+        const isF = followState[handle] ? true : false;
+        const rect = button.getBoundingClientRect();
+        const top   = rect.bottom + window.scrollY + 8;
+        const right = Math.max(16, window.innerWidth - rect.right);
 
-        var followIcon = isF
+        const followIcon = isF
             ? '<svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M10 4c-1.105 0-2 .9-2 2s.895 2 2 2 2-.9 2-2-.895-2-2-2zM6 6c0-2.21 1.791-4 4-4s4 1.79 4 4-1.791 4-4 4-4-1.79-4-4zm12.586 3l-2.043-2.04 1.414-1.42L20 7.59l2.043-2.05 1.414 1.42L21.414 9l2.043 2.04-1.414 1.42L20 10.41l-2.043 2.05-1.414-1.42L18.586 9zM3.651 19h12.698c-.337-1.8-1.023-3.21-1.945-4.19C13.318 13.65 11.838 13 10 13s-3.317.65-4.404 1.81c-.922.98-1.608 2.39-1.945 4.19zm.486-5.56C5.627 11.85 7.648 11 10 11s4.373.85 5.863 2.44c1.477 1.58 2.366 3.8 2.632 6.46l.11 1.1H1.395l.11-1.1c.266-2.66 1.155-4.88 2.632-6.46z"></path></g></svg>'
             : '<svg viewBox="0 0 24 24" aria-hidden="true"><g><path d="M10 4c-1.105 0-2 .9-2 2s.895 2 2 2 2-.9 2-2-.895-2-2-2zM6 6c0-2.21 1.791-4 4-4s4 1.79 4 4-1.791 4-4 4-4-1.79-4-4zm4 7c-3.053 0-5.563 1.193-7.443 3.596l1.548 1.207C5.573 15.922 7.541 15 10 15s4.427.922 5.895 2.803l1.548-1.207C15.563 14.193 13.053 13 10 13zm8-6V5h-3V3h-2v2h-3v2h3v3h2V7h3z"></path></g></svg>';
-        var followLabel = isF ? (handle + " 님 언팔로우하기") : (handle + " 님 팔로우하기");
+        const followLabel = isF ? (handle + " 님 언팔로우하기") : (handle + " 님 팔로우하기");
 
-        var lc = document.createElement("div");
+        const lc = document.createElement("div");
         lc.className = "layers-dropdown-container";
         lc.innerHTML =
             '<div class="layers-overlay"></div>' +
@@ -385,14 +385,14 @@ window.addEventListener("load", function () {
                 '</div>' +
             '</div>';
         lc.addEventListener("click", function (e) {
-            var item = e.target.closest(".menu-item");
+            const item = e.target.closest(".menu-item");
             if (!item) {
                 e.stopPropagation();
                 return;
             }
             e.preventDefault();
             e.stopPropagation();
-            var ac = "";
+            let ac = "";
             if (item.classList.contains("menu-item--follow-toggle")) { ac = "menu-item--follow-toggle"; }
             else if (item.classList.contains("menu-item--block"))         { ac = "menu-item--block"; }
             else if (item.classList.contains("menu-item--report"))        { ac = "menu-item--report"; }
@@ -408,7 +408,7 @@ window.addEventListener("load", function () {
 
     // postMoreButton 클릭 (이벤트 위임)
     document.addEventListener("click", function (e) {
-        var btn = e.target.closest(".postMoreButton");
+        const btn = e.target.closest(".postMoreButton");
         if (btn) {
             e.preventDefault();
             e.stopPropagation();
@@ -435,14 +435,14 @@ window.addEventListener("load", function () {
 
 // Connect / Disconnect 버튼
 (function () {
-    var modal = document.getElementById("disconnectModal");
-    var modalTitle = document.getElementById("disconnectModalTitle");
-    var modalConfirm = document.getElementById("disconnectConfirm");
-    var modalCancel = document.getElementById("disconnectCancel");
-    var pendingBtn = null;
+    const modal = document.getElementById("disconnectModal");
+    const modalTitle = document.getElementById("disconnectModalTitle");
+    const modalConfirm = document.getElementById("disconnectConfirm");
+    const modalCancel = document.getElementById("disconnectCancel");
+    let pendingBtn = null;
 
     function getHandleFromButton(button) {
-        var userCard = button.closest("[data-handle]");
+        const userCard = button.closest("[data-handle]");
         return userCard ? (userCard.dataset.handle || "") : "";
     }
 
@@ -478,7 +478,7 @@ window.addEventListener("load", function () {
     function openDisconnectModal(button) {
         if (!modal || !modalTitle) { return; }
         pendingBtn = button;
-        var handle = getHandleFromButton(button);
+        const handle = getHandleFromButton(button);
         modalTitle.textContent = handle ? (handle + " 님과의 연결을 끊으시겠습니까?") : "연결을 끊으시겠습니까?";
         modal.classList.add("active");
     }
@@ -490,7 +490,7 @@ window.addEventListener("load", function () {
     }
 
     document.addEventListener("click", function (e) {
-        var btn = e.target.closest(".connect-btn");
+        const btn = e.target.closest(".connect-btn");
         if (!btn) { return; }
         if (btn.classList.contains("default")) {
             setButtonToConnected(btn);
@@ -500,13 +500,13 @@ window.addEventListener("load", function () {
     });
 
     document.addEventListener("mouseover", function (e) {
-        var btn = e.target.closest(".connect-btn.connected");
+        const btn = e.target.closest(".connect-btn.connected");
         if (!btn) { return; }
         updateConnectedButtonHoverState(btn, true);
     });
 
     document.addEventListener("mouseout", function (e) {
-        var btn = e.target.closest(".connect-btn.connected");
+        const btn = e.target.closest(".connect-btn.connected");
         if (!btn) { return; }
         updateConnectedButtonHoverState(btn, false);
     });
@@ -533,9 +533,9 @@ window.addEventListener("load", function () {
 (function () {
     // Toast 알림
     function showToast(message, extraClass) {
-        var existing = document.querySelector(".toast");
+        const existing = document.querySelector(".toast");
         if (existing) { existing.remove(); }
-        var toast = document.createElement("div");
+        const toast = document.createElement("div");
         toast.className = "toast" + (extraClass ? " " + extraClass : "");
         toast.textContent = message;
         document.body.appendChild(toast);
@@ -543,9 +543,9 @@ window.addEventListener("load", function () {
     }
 
     function showShareToast(message) {
-        var existing = document.querySelector(".share-toast");
+        const existing = document.querySelector(".share-toast");
         if (existing) { existing.remove(); }
-        var toast = document.createElement("div");
+        const toast = document.createElement("div");
         toast.className = "share-toast";
         toast.textContent = message;
         document.body.appendChild(toast);
@@ -554,17 +554,17 @@ window.addEventListener("load", function () {
 
     function setBookmarkButtonState(button, isActive) {
         if (!button) { return; }
-        var path = button.querySelector("path");
+        const path = button.querySelector("path");
         if (!path) { return; }
-        var activePath = path.getAttribute("data-path-active") || "M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5z";
-        var inactivePath = path.getAttribute("data-path-inactive") || "M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5h-11z";
+        const activePath = path.getAttribute("data-path-active") || "M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5z";
+        const inactivePath = path.getAttribute("data-path-inactive") || "M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5h-11z";
         button.classList.toggle("active", isActive);
         path.setAttribute("d", isActive ? activePath : inactivePath);
     }
 
-    var activeShareDropdown = null;
-    var activeShareButton = null;
-    var activeShareModal = null;
+    let activeShareDropdown = null;
+    let activeShareButton = null;
+    let activeShareModal = null;
 
     function closeShareDropdown() {
         if (!activeShareDropdown) { return; }
@@ -598,7 +598,7 @@ window.addEventListener("load", function () {
     function openShareChatModal() {
         closeShareDropdown();
         closeShareModal();
-        var modal = document.createElement("div");
+        const modal = document.createElement("div");
         modal.className = "share-sheet";
         modal.innerHTML =
             '<div class="share-sheet__backdrop" data-share-close="true"></div>' +
@@ -631,13 +631,13 @@ window.addEventListener("load", function () {
     }
 
     function openShareBookmarkModal(button) {
-        var actionBar = button.closest(".tweet-action-bar");
-        var bookmarkButton = actionBar ? actionBar.querySelector(".tweet-action-btn--bookmark") : null;
-        var isBookmarked = bookmarkButton ? bookmarkButton.classList.contains("active") : false;
+        const actionBar = button.closest(".tweet-action-bar");
+        const bookmarkButton = actionBar ? actionBar.querySelector(".tweet-action-btn--bookmark") : null;
+        const isBookmarked = bookmarkButton ? bookmarkButton.classList.contains("active") : false;
         closeShareDropdown();
         closeShareModal();
-        var checkClass = "share-sheet__folder-check" + (isBookmarked ? " share-sheet__folder-check--active" : "");
-        var modal = document.createElement("div");
+        const checkClass = "share-sheet__folder-check" + (isBookmarked ? " share-sheet__folder-check--active" : "");
+        const modal = document.createElement("div");
         modal.className = "share-sheet";
         modal.innerHTML =
             '<div class="share-sheet__backdrop" data-share-close="true"></div>' +
@@ -680,10 +680,10 @@ window.addEventListener("load", function () {
 
     function openShareDropdown(button) {
         closeShareDropdown();
-        var rect = button.getBoundingClientRect();
-        var top = rect.bottom + window.scrollY + 8;
-        var right = Math.max(16, window.innerWidth - rect.right);
-        var layer = document.createElement("div");
+        const rect = button.getBoundingClientRect();
+        const top = rect.bottom + window.scrollY + 8;
+        const right = Math.max(16, window.innerWidth - rect.right);
+        const layer = document.createElement("div");
         layer.className = "layers-dropdown-container";
         layer.innerHTML =
             '<div class="layers-overlay"></div>' +
@@ -706,7 +706,7 @@ window.addEventListener("load", function () {
                 '</div>' +
             '</div>';
         layer.addEventListener("click", function (e) {
-            var actionButton = e.target.closest(".share-menu-item");
+            const actionButton = e.target.closest(".share-menu-item");
             if (!actionButton || !activeShareButton) {
                 e.stopPropagation();
                 return;
@@ -733,16 +733,16 @@ window.addEventListener("load", function () {
 
     // Like 버튼
     document.querySelectorAll(".tweet-action-btn--like").forEach(function (likeButton) {
-        var countEl = likeButton.querySelector(".tweet-action-count");
-        var path = likeButton.querySelector("svg path");
+        const countEl = likeButton.querySelector(".tweet-action-count");
+        const path = likeButton.querySelector("svg path");
         if (!path) { return; }
-        var isLiked = false;
+        let isLiked = false;
         likeButton.addEventListener("click", function (e) {
             isLiked = !isLiked;
             likeButton.classList.toggle("active", isLiked);
             path.setAttribute("d", isLiked ? path.getAttribute("data-path-active") : path.getAttribute("data-path-inactive"));
             if (countEl) {
-                var cur = parseInt(countEl.textContent.replace(/[^0-9]/g, ""), 10) || 0;
+                const cur = parseInt(countEl.textContent.replace(/[^0-9]/g, ""), 10) || 0;
                 countEl.textContent = isLiked ? cur + 1 : cur - 1;
             }
             showToast(isLiked ? "좋아요를 눌렀습니다." : "좋아요를 취소했습니다.", "toast--like");
@@ -751,9 +751,9 @@ window.addEventListener("load", function () {
 
     // Bookmark 버튼
     document.querySelectorAll(".tweet-action-btn--bookmark").forEach(function (bookmarkButton) {
-        var path = bookmarkButton.querySelector("svg path");
+        const path = bookmarkButton.querySelector("svg path");
         if (!path) { return; }
-        var isBookmarked = false;
+        let isBookmarked = false;
         bookmarkButton.addEventListener("click", function (e) {
             isBookmarked = !isBookmarked;
             setBookmarkButtonState(bookmarkButton, isBookmarked);
